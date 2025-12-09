@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قارئ الكتب | المكتبة التنومريتية</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <ion-icon name="library-outline" style="font-size: 2rem; color: var(--secondary-color);"></ion-icon>
+                <div class="logo-text">
+                    <h1>المكتبة التنومريتية</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="reader-layout">
+            <div class="reader-header">
+                <div>
+                    <a href="index.html" class="back-button">
+                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                        عودة للمكتبة
+                    </a>
+                </div>
+
+                <h2 id="bookTitle">جاري تحميل الكتاب...</h2>
+
+                <a id="downloadBtn" href="#" class="download-btn" download>
+                    <ion-icon name="cloud-download-outline"></ion-icon>
+                    تحميل الكتاب
+                </a>
+            </div>
+
+            <div id="pdf-container">
+                <div id="viewer" class="pdf-viewer"></div>
+            </div>
+
+            <div class="toolbar">
+                <button id="prevBtn" title="السابق">
+                    <ion-icon name="arrow-forward-circle-outline" size="large"></ion-icon>
+                </button>
+                <span>صفحة <span id="pageNum">--</span> من <span id="pageCount">--</span></span>
+                <button id="nextBtn" title="التالي">
+                    <ion-icon name="arrow-back-circle-outline" size="large"></ion-icon>
+                </button>
+                <div style="width: 20px;"></div>
+                <button id="zoomOut" title="تصغير">
+                    <ion-icon name="remove-circle-outline" size="large"></ion-icon>
+                </button>
+                <button id="zoomIn" title="تكبير">
+                    <ion-icon name="add-circle-outline" size="large"></ion-icon>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Load Catalog for verification (optional, mainly for title) -->
+    <script src="catalog.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

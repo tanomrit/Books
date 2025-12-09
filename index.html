@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المكتبة التنومريتية</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ionicons for icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <ion-icon name="library-outline" style="font-size: 2.5rem; color: var(--secondary-color);"></ion-icon>
+                <div class="logo-text">
+                    <h1>المكتبة التنومريتية</h1>
+                    <p>تراث قرية تنومريت - زاكورة</p>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="searchInput" class="search-input" placeholder="ابحث عن كتاب...">
+                <ion-icon name="search-outline" class="search-icon"></ion-icon>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="controls-bar">
+            <!-- Filter buttons can be added here -->
+            <div class="filters">
+                <!-- Example: <button class="filter-btn active">الكل</button> -->
+            </div>
+            
+            <div class="sort-controls">
+                <select id="sortSelect" class="sort-select">
+                    <option value="newest">الأحدث إضافة</option>
+                    <option value="oldest">الأقدم إضافة</option>
+                    <option value="az">أبجدياً (أ-ي)</option>
+                    <option value="za">أبجدياً (ي-أ)</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="bookGrid" class="book-grid">
+            <!-- Books will be injected here by JS -->
+            <div class="loading-spinner"></div>
+        </div>
+        
+        <div id="noResults" class="empty-state" style="display: none;">
+            <ion-icon name="search" style="font-size: 3rem; color: var(--border-color);"></ion-icon>
+            <h3>لا توجد نتائج مطابقة لبحثك</h3>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>جميع الحقوق محفوظة &copy; 2024 المكتبة التنومريتية</p>
+            <p style="font-size: 0.8rem; margin-top: 8px;">وقف لله تعالى</p>
+        </div>
+    </footer>
+
+    <!-- Load Catalog Data -->
+    <script src="catalog.js"></script>
+    <!-- Main Application Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
